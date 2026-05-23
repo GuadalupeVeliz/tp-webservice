@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { PuntoAService } from '../../services/punto-a.service';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-punto-a',
-  imports: [CommonModule],
+  imports: [CommonModule,FormsModule],
   templateUrl: './punto-a.component.html',
   styleUrl: './punto-a.component.css'
 })
