@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import { PuntoAComponent } from './components/punto-a/punto-a.component';
+import { PuntoEComponent } from './components/punto-e/punto-e.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,HeaderComponent, FooterComponent,PuntoAComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, PuntoAComponent, PuntoEComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

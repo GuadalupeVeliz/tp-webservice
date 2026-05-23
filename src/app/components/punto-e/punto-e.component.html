@@ -1,0 +1,25 @@
+<main class="container vh-100">
+    <form class="w-50 m-auto my-5 p-3 border rounded mb-4">
+        <h2 class="text-center mb-4">Open Weather API</h2>
+        <div class="mb-4">
+            <label class="form-label">Nombre de ciudad:</label>
+            <input class="form-control" type="text" [(ngModel)]="cityName" name="cityName" placeholder="ej. Madrid" />
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-dark px-5" (click)="buscarCiudad()">Buscar Clima</button>
+        </div>
+    </form>
+
+    <div *ngIf="cargando" class="clima border m-auto w-50 p-3">
+        <h3>Buscando...</h3>
+    </div>
+
+    <div *ngIf="ciudad && !cargando" class="clima border m-auto w-50 p-3">
+        <p class="h3">Ciudad: {{ ciudad.nombre }} - {{ ciudad.codigoPais }}</p>
+        <p class="h4">{{ ciudad.clima.descripcion | titlecase }}</p>
+        <p class="h5">Temp: {{ ciudad.temperatura.actual }}°C</p>
+        <p class="h5">Min: {{ ciudad.temperatura.minima }}°C - Max: {{ ciudad.temperatura.maxima }}°C</p>
+        <img [src]="ciudad.clima.icono">
+    </div>
+
+</main>
