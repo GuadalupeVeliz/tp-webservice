@@ -1,0 +1,102 @@
+/* Base del badge */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  cursor: default;
+}
+
+/* Colores */
+.badge-ciencia-ficcion {
+  background-color: #2196f3;
+  /* Azul */
+}
+
+.badge-aventura {
+  background-color: #ff9800;
+  /* Naranja */
+}
+
+.badge-drama {
+  background-color: #f44336;
+  /* Rojo/Coral */
+}
+
+.badge-accion {
+  background-color: #f44336;
+  /* Rojo */
+}
+
+.badge-crimen {
+  background-color: #9c27b0;
+  /* Violeta */
+}
+
+.badge-mystery {
+  background-color: #607d8b;
+}
+
+/* Gris azulado */
+.badge-thriller {
+  background-color: #795548;
+}
+
+/* Marrón oscuro */
+.badge-war {
+  background-color: #5d4037;
+}
+
+/* Marrón */
+.badge-biography {
+  background-color: #00897b;
+}
+
+/* Verde azulado */
+.badge-history {
+  background-color: #8d6e63;
+}
+
+/* Beige oscuro */
+.badge-animation {
+  background-color: #e91e63;
+}
+
+/* Rosa */
+.badge-fantasy {
+  background-color: #673ab7;
+}
+
+/* Violeta oscuro */
+.badge-comedy {
+  background-color: #fdd835;
+  color: #333;
+}
+
+/* Amarillo (texto oscuro) */
+
+.badge-horror {
+  background-color: #b71c1c;
+}
+
+/* Rojo oscuro */
+
+.badge-family {
+  background-color: #43a047;
+}
+
+/* Verde */
+
+.badge-romance {
+  background-color: #e91e63;
+}
+
+/* Rosa */
+
+.badge-western {
+  background-color: #bf360c;
+}
+
+/* Naranja quemado */

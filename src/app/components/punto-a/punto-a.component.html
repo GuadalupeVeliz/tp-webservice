@@ -1,0 +1,35 @@
+<h1 class="bg-dark bg-opacity-75 text-center text-white mb-0">Listado de Peliculas Recomendadas</h1>
+<div class="container-fluid bg-dark bg-opacity-75">
+  <div class="row justify-content-center">
+    <div class="card col-12 col-md-3 col-lg-2 m-2 bg-dark bg-opacity-75 text-white border-dark border-1"
+      *ngFor="let pelicula of peliculas; let i = index">
+      <img [src]="peliculas[i].image" class="card-img-top px-4 pt-3" style="height: 350px; object-fit: cover;">
+      <div class="card-body">
+        <h5 class="card-title">{{peliculas[i].title}}</h5>
+        <p class="card-text">{{peliculas[i].description | slice:0:100 }}...</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+          <span>Gen: </span>
+          <span [ngClass]="{
+            'badge-drama': genero === 'Drama',
+            'badge-ciencia-ficcion': genero === 'Sci-Fi',
+            'badge-aventura' : genero ==='Adventure',
+            'badge-accion' : genero === 'Action',
+            'badge-crimen' : genero === 'Crime',
+            'badge-mystery': genero === 'Mystery',
+            'badge-thriller':  genero === 'Thriller',
+            'badge-war':       genero === 'War',
+            'badge-biography': genero === 'Biography',
+            'badge-history':   genero === 'History',
+            'badge-animation': genero === 'Animation',
+            'badge-fantasy':   genero === 'Fantasy',
+            'badge-comedy':    genero === 'Comedy',
+            'badge-family': genero === 'Family',
+            'badge-horror': genero === 'Horror',
+            'badge-romance': genero === 'Romance',
+            'badge-western': genero === 'Western',
+          }" class="badge" *ngFor="let genero of peliculas[i].genre">{{genero}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
