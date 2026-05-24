@@ -4,17 +4,17 @@
       Conversor de Divisas
     </h1>
     <div class="mb-3">
-      <label for="cantidad" class="form-label">Cantidad</label>
+      <label for="cantidad" class="form-label text-white">Cantidad</label>
       <input type="number" class="form-control" id="cantidad" name="cantidad" [(ngModel)]="cantidad">
     </div>
     <div class="mb-3">
-      <label>De</label>
+      <label class="text-white">De</label>
       <select class="form-select" name="monedaOrigen" [(ngModel)]="monedaOrigen">
         <option *ngFor=" let moneda of monedas" [value]="moneda.code">{{moneda.name}} </option>
       </select>
     </div>
     <div class="mb-3">
-      <label>A</label>
+      <label class="text-white">A</label>
       <select class="form-select" name="monedaDestino" [(ngModel)]="monedaDestino">
         <option *ngFor=" let moneda of monedas" [value]="moneda.code">{{moneda.name}}</option>
       </select>
@@ -23,7 +23,7 @@
       Convertir
     </button>
     <div class="mt-4 p-3 bg-light rounded-3 shadow-sm text-center">
-      <small class="text-muted d-block mb-1">Resultado</small>
+      <small class="text-muted d-block mb-1 text-white">Resultado</small>
       <span class="fs-2 fw-bold text-dark">{{resultado | number}}</span>
     </div>
 
