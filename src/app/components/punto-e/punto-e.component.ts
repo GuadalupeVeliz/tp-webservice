@@ -5,17 +5,9 @@ import { FormsModule } from '@angular/forms';
 
 interface CiudadData {
   nombre: string;
-  temperatura: {
-    actual: number;
-    minima: number;
-    maxima: number;
-  }
+  temperatura: { actual: number; minima: number; maxima: number; }
   codigoPais: string,
-  clima: {
-    descripcion: string;
-    icono: string;
-    main: string;
-  }
+  clima: { descripcion: string; icono: string; main: string; }
 }
 
 @Component({
@@ -30,37 +22,44 @@ export class PuntoEComponent {
   cityName: string = "";
   cargando: boolean = false;
   ciudad: CiudadData | null = null;
+  ciudadNoEncontrada: boolean = false;
 
   constructor(private _weatherService: PuntoEService) { }
 
   buscarCiudad(): void {
     const cityName = this.cityName;
     this.cargando = true;
-
+    this.ciudadNoEncontrada = false;
     this._weatherService.getWeatherByCityName(cityName).subscribe(
       (result: any) => {
         console.log(result)
-        const ciudadData: CiudadData = {
-          nombre: result.name,
-          temperatura: {
-            actual: result.main.temp,
-            minima: result.main.temp_min,
-            maxima: result.main.temp_max
-          },
-          codigoPais: result.sys.country,
-          clima: {
-            main: result.weather[0].main,
-            descripcion: result.weather[0].description,
-            icono: this.urlBaseImg + result.weather[0].icon + ".png"
+        if (result.cod === 200) {
+          const ciudadData: CiudadData = {
+            nombre: result.name,
+            temperatura: {
+              actual: result.main.temp,
+              minima: result.main.temp_min,
+              maxima: result.main.temp_max
+            },
+            codigoPais: result.sys.country,
+            clima: {
+              main: result.weather[0].main,
+              descripcion: result.weather[0].description,
+              icono: this.urlBaseImg + result.weather[0].icon + ".png"
+            }
           }
+          this.ciudad = ciudadData;
+          console.log(this.ciudad);
         }
-        this.ciudad = ciudadData;
-        console.log(this.ciudad);
+        if (result.cod === '404') {
+          this.ciudadNoEncontrada = true;
+          this.ciudad = null;
+        }
         this.cargando = false;
       },
       (error: any) => {
-        console.log(error);
         this.cargando = false;
+        console.log(error);
       }
     )
 
