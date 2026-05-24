@@ -37,9 +37,9 @@ export class PuntoEComponent {
           const ciudadData: CiudadData = {
             nombre: result.name,
             temperatura: {
-              actual: result.main.temp,
-              minima: result.main.temp_min,
-              maxima: result.main.temp_max
+              actual: this.convertirACelsius(result.main.temp),
+              minima: this.convertirACelsius(result.main.temp_min),
+              maxima: this.convertirACelsius(result.main.temp_max)
             },
             codigoPais: result.sys.country,
             clima: {
@@ -62,7 +62,10 @@ export class PuntoEComponent {
         console.log(error);
       }
     )
-
+  }
+  
+  convertirACelsius(temp: number): number {
+    return Math.round((temp - 32) * 5 / 9);
   }
 
 }
