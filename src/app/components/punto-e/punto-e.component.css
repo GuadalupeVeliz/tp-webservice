@@ -1,0 +1,11 @@
+.clima {
+    position: relative;
+}
+
+.clima img {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 150px;
+    height: 150px;
+}
