@@ -1,12 +1,12 @@
 <main class="container vh-100">
-    <form class="w-50 m-auto my-5 p-3 border rounded mb-4 bg-light">
-        <h2 class="text-center mb-4">Open Weather API</h2>
+    <form class="w-50 m-auto my-5 p-3 border rounded mb-4 bg-secondary">
+        <h2 class="text-center mb-4 text-white" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.4);">Open Weather API</h2>
         <div class="mb-4">
-            <label class="form-label">Nombre de ciudad:</label>
+            <label class="form-label text-white">Nombre de ciudad:</label>
             <input class="form-control" type="text" [(ngModel)]="cityName" name="cityName" placeholder="ej. Madrid" />
         </div>
         <div class="mb-3">
-            <button class="btn btn-dark px-5" (click)="buscarCiudad()">Buscar Clima</button>
+            <button class="btn btn-dark px-5 text-white" (click)="buscarCiudad()">Buscar Clima</button>
         </div>
     </form>
 

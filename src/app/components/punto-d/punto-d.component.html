@@ -1,0 +1,29 @@
+<div class="container py-5 bg-secondary rounded mb-4 mt-3" style="max-width: 560px;">
+  <h4 class="text-white text-center fw-bold mb-4" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.4);"> Texto a Voz</h4>
+
+  <div class="mb-3">
+    <label for="textInput" class="form-label text-white">Ingrese el texto</label>
+    <textarea class="form-control" id="textInput" rows="4" placeholder="Escribe aquí el texto que deseas escuchar..."
+      [(ngModel)]="texto"></textarea>
+  </div>
+
+  <div class="mb-4">
+    <label for="voiceSelect" class="form-label text-white">Seleccione una voz</label>
+    <select class="form-select" id="voiceSelect" name="voz" [(ngModel)="voz" ]>
+      <option *ngFor="let v of voces" [value]="v">
+        {{ v }}
+      </option>
+    </select>
+  </div>
+
+  <button class="btn btn-dark w-100 mb-4" (click)="obtenerAudio()">Generar audio</button>
+
+  <div id="audioSection">
+    <label class="form-label text-white">Reproducir audio</label>
+    <div *ngIf="cargandoAudio" class="text-white">
+      <span class="spinner-border spinner-border-sm me-2"></span>
+      Cargando audio...
+    </div>
+    <audio [hidden]="cargandoAudio" id="audioPlayer" controls class="w-100"></audio>
+  </div>
+</div>
